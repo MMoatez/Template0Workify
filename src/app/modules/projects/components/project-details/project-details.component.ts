@@ -43,10 +43,9 @@ export class ProjectDetailsComponent implements OnInit {
           projectSkills.some(pSkill => pSkill.toLowerCase().includes(skill.toLowerCase()))
         );
         
-        let matchScore = Math.min(
-          Math.floor((matchingSkills.length / projectSkills.length) * 100),
-          99
-        );
+        let matchScore = projectSkills.length > 0 
+          ? Math.min(Math.floor((matchingSkills.length / projectSkills.length) * 100), 99)
+          : 0;
 
         if (matchScore <= 50) {
           matchScore = Math.floor(Math.random() * 30) + 70;
