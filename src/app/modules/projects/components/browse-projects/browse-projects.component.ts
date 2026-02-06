@@ -23,6 +23,7 @@ export class BrowseProjectsComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
+    // Demo/mock data: Generate random match scores for prototype
     this.projectsWithScores = projects.map(project => ({
       ...project,
       matchScore: Math.floor(Math.random() * 30) + 70

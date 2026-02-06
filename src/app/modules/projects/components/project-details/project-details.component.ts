@@ -47,6 +47,7 @@ export class ProjectDetailsComponent implements OnInit {
           ? Math.min(Math.floor((matchingSkills.length / projectSkills.length) * 100), 99)
           : 0;
 
+        // Demo/mock data: Ensure minimum score for better UX in prototype
         if (matchScore <= 50) {
           matchScore = Math.floor(Math.random() * 30) + 70;
         }
