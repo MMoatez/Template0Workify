@@ -5,7 +5,7 @@ const routes: Routes = [
   { path: '', loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule) },
   { path: 'projects', loadChildren: () => import('./modules/projects/projects.module').then(m => m.ProjectsModule) },
   { path: 'freelancers', loadChildren: () => import('./modules/freelancer/freelancer.module').then(m => m.FreelancerModule) },
-  { path: '**', redirectTo: '/not-found' }
+  { path: '**', redirectTo: '/freelancers/not-found' }
 ];
 
 @NgModule({
