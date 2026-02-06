@@ -38,9 +38,9 @@ export class ProjectDetailsComponent implements OnInit {
     const projectSkills = this.project.skills || [];
     
     this.recommendedFreelancers = freelancers
-      .map(freelancer => {
-        const matchingSkills = freelancer.skills.filter(skill =>
-          projectSkills.some(pSkill => pSkill.toLowerCase().includes(skill.toLowerCase()))
+      .map((freelancer: any) => {
+        const matchingSkills = freelancer.skills.filter((skill: string) =>
+          projectSkills.some((pSkill: string) => pSkill.toLowerCase().includes(skill.toLowerCase()))
         );
         
         let matchScore = projectSkills.length > 0 
@@ -58,7 +58,7 @@ export class ProjectDetailsComponent implements OnInit {
           matchingSkills
         };
       })
-      .sort((a, b) => b.matchScore - a.matchScore)
+      .sort((a: any, b: any) => b.matchScore - a.matchScore)
       .slice(0, 3);
   }
 
