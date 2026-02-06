@@ -9,6 +9,7 @@ interface Plan {
 
 @Component({
   selector: 'app-bank-payment-form',
+  standalone: false,
   templateUrl: './bank-payment-form.component.html',
   styleUrls: ['./bank-payment-form.component.scss']
 })

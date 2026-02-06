@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Freelancer, categories, freelancers } from './data/freelancer-mock-data';
 
 @Component({
+  standalone: false,
   selector: 'app-freelancer-profiles',
   templateUrl: './freelancer-profiles.component.html',
   styleUrls: ['./freelancer-profiles.component.scss']

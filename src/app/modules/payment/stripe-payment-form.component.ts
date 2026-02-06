@@ -9,6 +9,7 @@ interface Plan {
 
 @Component({
   selector: 'app-stripe-payment-form',
+  standalone: false,
   templateUrl: './stripe-payment-form.component.html',
   styleUrls: ['./stripe-payment-form.component.scss']
 })

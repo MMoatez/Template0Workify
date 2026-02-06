@@ -4,6 +4,7 @@ import { Plan, plans } from './data/subscription-mock-data';
 type PaymentMethod = 'online' | 'bank-transfer' | 'cash-deposit' | null;
 
 @Component({
+  standalone: false,
   selector: 'app-freelancer-subscription',
   templateUrl: './freelancer-subscription.component.html',
   styleUrls: ['./freelancer-subscription.component.scss']
