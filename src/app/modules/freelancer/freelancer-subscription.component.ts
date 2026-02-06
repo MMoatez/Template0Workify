@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 interface Plan {
   id: string;
@@ -87,14 +87,11 @@ const plans: Plan[] = [
   templateUrl: './freelancer-subscription.component.html',
   styleUrls: ['./freelancer-subscription.component.scss']
 })
-export class FreelancerSubscriptionComponent implements OnInit {
+export class FreelancerSubscriptionComponent {
   plans = plans;
   selectedPlan: Plan | null = null;
   paymentMethod: PaymentMethod = null;
   showPaymentModal = false;
-
-  ngOnInit(): void {
-  }
 
   handleSelectPlan(plan: Plan): void {
     this.selectedPlan = plan;

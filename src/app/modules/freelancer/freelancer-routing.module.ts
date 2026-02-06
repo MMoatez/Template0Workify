@@ -7,20 +7,15 @@ import { NotFoundComponent } from './not-found.component';
 const routes: Routes = [
   {
     path: '',
-    children: [
-      {
-        path: 'freelancers',
-        component: FreelancerProfilesComponent
-      },
-      {
-        path: 'subscription',
-        component: FreelancerSubscriptionComponent
-      },
-      {
-        path: 'not-found',
-        component: NotFoundComponent
-      }
-    ]
+    component: FreelancerProfilesComponent
+  },
+  {
+    path: 'subscription',
+    component: FreelancerSubscriptionComponent
+  },
+  {
+    path: 'not-found',
+    component: NotFoundComponent
   }
 ];
 

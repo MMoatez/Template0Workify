@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 interface Freelancer {
   id: number;
@@ -42,21 +42,20 @@ const freelancers: Freelancer[] = [
   templateUrl: './freelancer-profiles.component.html',
   styleUrls: ['./freelancer-profiles.component.scss']
 })
-export class FreelancerProfilesComponent implements OnInit {
+export class FreelancerProfilesComponent {
   searchTerm: string = '';
   selectedCategory: string = 'All Categories';
   rateRange: [number, number] = [0, 150];
   sortBy: 'match' | 'rating' | 'rate' = 'match';
   
   categories = categories;
-  freelancersWithScores: Freelancer[] = [];
+  freelancersWithScores: Freelancer[] = freelancers.map(freelancer => ({
+    ...freelancer,
+    matchScore: Math.floor(Math.random() * 30) + 70
+  }));
   filteredFreelancers: Freelancer[] = [];
 
-  ngOnInit(): void {
-    this.freelancersWithScores = freelancers.map(freelancer => ({
-      ...freelancer,
-      matchScore: Math.floor(Math.random() * 30) + 70
-    }));
+  constructor() {
     this.filterAndSortFreelancers();
   }
 
